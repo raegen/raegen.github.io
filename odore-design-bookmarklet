@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Odore: Toggle design version bookmarklet</title>
+<style>
+a {
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  
+  background-color: #2ecc71;
+  color: #ecf0f1;
+  
+  transition: background-color .3s;
+}
+
+a:hover, a:focus {
+  background-color: #27ae60;
+}
+
+a > * {
+  position: relative;
+}
+
+a span {
+  display: block;
+  padding: 12px 24px;
+}
+
+a:before {
+  content: "";
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: block;
+  width: 0;
+  padding-top: 0;
+    
+  border-radius: 100%;
+  
+  background-color: rgba(236, 240, 241, .3);
+  
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+a:active:before {
+  width: 120%;
+  padding-top: 120%;
+  
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+/* Styles, not important */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+  background-color: #ecf0f1;
+  color: #34495e;
+  text-align: center;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+a.orange {
+  background-color: #e67e22;
+}
+
+a.orange:hover, .btn.orange:focus {
+  background-color: #d35400;
+}
+
+a.red {
+  background-color: #e74c3c;
+}
+
+a.red:hover, a.red:focus {
+  background-color: #c0392b;
+}
+</style>
+</head>
+<body>
+<a href="javascript:(function()%7Bif%20(%2Fodore%5C.com%2F.test(location.hostname))%20%7B%0Atry%20%7B%0Awindow.localStorage.setItem('toggle_DS'%2C%20Number(!Number(window.localStorage.getItem('toggle_DS'))))%3B%0Awindow.dispatchEvent(%0A%20%20new%20StorageEvent('storage'%2C%20%7B%0A%20%20%20%20storageArea%3A%20window.localStorage%2C%0A%20%20%20%20key%3A%20'toggle_DS'%2C%0A%20%20%7D)%2C%0A)%3B%0A%7D%20catch(e)%20%7B%0A%20%20console.log('Failed%20to%20toggle%20design%20version'%2C%20e)%3B%0A%7D%0A%7D%7D)()%3B">Odore: Toggle design version</a>
+</body>
+</html>
