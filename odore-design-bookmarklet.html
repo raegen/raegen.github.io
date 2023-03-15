@@ -367,7 +367,7 @@ a.red:hover, a.red:focus {
 }
   
   .arrow-container {
-   font-size: 60px;
+   font-size: 5vw;
     flex: 1;
     display: flex;
     align-items: center;
@@ -376,6 +376,12 @@ a.red:hover, a.red:focus {
   .arrow {
     transform: scaleX(5);
     width: 100%;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .arrow-container {
+      display: none;
+    }
   }
 </style>
 </head>
