@@ -36,26 +36,35 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-/*******************************************************************************
-Theme Styles
-*******************************************************************************/
+  
+html {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
 body {
   box-sizing: border-box;
-  color:#373737;
+  color: #373737;
   background: #212121;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  text-align: center;
+  margin: 0;
+  height: 100%;
+  position: relative;
+  padding: 20px 10px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-weight: 700;
   color:#222222;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto', sans-serif;
   letter-spacing: -1px;
 }
 
@@ -67,7 +76,6 @@ h1 {
 h2 {
   padding-bottom: 10px;
   font-size: 32px;
-  background: url('../images/bg_hr.png') repeat-x bottom;
 }
 
 h3 {
@@ -108,13 +116,6 @@ a {
   -o-transition: text-shadow 0.5s ease;
   -ms-transition: color 0.5s ease;
   -ms-transition: text-shadow 0.5s ease;
-}
-
-a:hover, a:focus {text-decoration: underline;}
-
-footer a {
-  color: #F2F2F2;
-  text-decoration: underline;
 }
 
 em {
@@ -343,16 +344,6 @@ a:active:before {
 html {
   position: relative;
   height: 100%;
-}
-
-body {
-  background-color: #1d1e22;
-  font-family: 'Roboto', sans-serif;
-  color: #34495e;
-  text-align: center;
-  margin: 0;
-  height: 100%;
-  width: 100%;
 }
 
 h2 {
