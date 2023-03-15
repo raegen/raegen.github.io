@@ -378,8 +378,28 @@ a.red:hover, a.red:focus {
             your browser's Bookmark Manager or Show All Bookmarks feature.</p>
   </article>
   
+<div style="display: flex">
+<span style="
+    font-size: 60px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+"><span style="
+    transform: scaleX(5);
+    width: 100%;
+">→</span></span>
 <a href="javascript:(function()%7Bif%20(%2Fodore%5C.com%2F.test(location.hostname))%20%7B%0Atry%20%7B%0Awindow.localStorage.setItem('toggle_DS'%2C%20Number(!Number(window.localStorage.getItem('toggle_DS'))))%3B%0Awindow.dispatchEvent(%0A%20%20new%20StorageEvent('storage'%2C%20%7B%0A%20%20%20%20storageArea%3A%20window.localStorage%2C%0A%20%20%20%20key%3A%20'toggle_DS'%2C%0A%20%20%7D)%2C%0A)%3B%0A%7D%20catch(e)%20%7B%0A%20%20console.log('Failed%20to%20toggle%20design%20version'%2C%20e)%3B%0A%7D%0A%7D%7D)()%3B">
   <span>Odore: Toggle design version</span>
 </a>
+<span style="
+    font-size: 60px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+"><span style="
+    transform: scaleX(5);
+    width: 100%;
+">←</span></span>
+</div>
 </body>
 </html>
