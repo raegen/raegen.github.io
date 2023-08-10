@@ -12,6 +12,11 @@ $(function(){
     , STROKE_OPACITY_ACTIVE = 0.9
     ;
 
+    const getContentHeight = (node) => {
+      const { width, height } = node.getBBox();
+      const actual = node.getBoundingClientRect();
+      return height * (actual.width / width);
+    }
   /**
    * Init visuals. One time call
    * @param  {String} selector
@@ -20,30 +25,20 @@ $(function(){
     var that = this
       , $svg1 = $('#stackedArea svg')
       , $svg2 = $('#semiCircles svg')
-      , $graphs = $('#graphs')
-
-    // Init semicircles container
-    d3.select('#semiCircles')
-      // .style('margin-left', MARGIN_LEFT)
-      // .style('margin-right', MARGIN_RIGHT + 'px')
 
     // On resize
-    var onResize = function(ev){
+    var resize = function(ev){
       if (that.lastData != null) {
         that.showSemiCircles(that.lastData, that.lastSplitIssues, false)
       }
 
-      var width = $graphs.width()
-        , svg1Height = Math.ceil(Math.max(200, width / 3))
-        , svg2Height = Math.ceil(Math.max(200, width / 2.5))
-
-      $svg1.height(svg1Height)
-      $svg2.height(svg2Height)
+      $svg1.height(getContentHeight($svg1.node()))
+      $svg2.height(getContentHeight($svg2.node()))
     }
     // Trigger on resize for the first time
-    onResize()
+    resize()
 
-    window.addEventListener('resize', onResize)
+    window.addEventListener('resize', resize)
   }
 
   Visuals.prototype.emptyGraphs = function() {
